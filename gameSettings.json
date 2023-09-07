@@ -1,0 +1,9 @@
+{
+    "shop": {
+        "materialPool": {
+            "size": 1000000,
+            "value": 1000000
+        },
+        "space": 10
+    }
+}

@@ -1,0 +1,51 @@
+{
+		"name": "pwcollections-server",
+		"version": "1.0.0",
+		"description": "",
+		"main": "index.js",
+		"type": "module",
+		"scripts": {
+				"test": "echo \"Error: no test specified\" && exit 1",
+				"ts": "tsc --watch",
+				"nm": "nodemon dist/index.js"
+		},
+		"author": "",
+		"license": "ISC",
+		"devDependencies": {
+				"@types/cookie-parser": "^1.4.3",
+				"@types/events": "^3.0.0",
+				"@types/express": "^4.17.17",
+				"@types/js-cookie": "^3.0.2",
+				"@types/jsonwebtoken": "^8.5.9",
+				"@types/luxon": "^3.1.0",
+				"@types/node-schedule": "^2.1.0",
+				"@types/pg-promise": "^5.4.3",
+				"@types/socket.io": "^3.0.2",
+				"@types/socket.io-client": "^3.0.0",
+				"@typescript-eslint/eslint-plugin": "^5.27.0",
+				"@typescript-eslint/parser": "^5.27.0",
+				"eslint": "^8.16.0",
+				"eslint-config-prettier": "^8.3.0",
+				"nodemon": "^3.0.1",
+				"prettier": "^2.6.2",
+				"tslib": "^2.3.1",
+				"typescript": "^4.7.4"
+		},
+		"dependencies": {
+				"@types/deep-equal": "^1.0.1",
+				"cookie-parser": "^1.4.6",
+				"deep-equal": "^2.2.2",
+				"dotenv": "^16.3.1",
+				"express": "^4.18.2",
+				"google-auth-library": "^8.7.0",
+				"jsonwebtoken": "^8.5.1",
+				"jwt-decode": "^3.1.2",
+				"luxon": "^3.0.4",
+				"node-schedule": "^2.1.0",
+				"pg": "^8.8.0",
+				"pg-promise": "^10.15.1",
+				"socket.io": "^4.5.4",
+				"zod": "^3.22.2",
+				"zod-validation-error": "^1.5.0"
+		}
+}

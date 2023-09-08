@@ -36,6 +36,7 @@ export default class LiveData {
             res.setHeader("Transfer-Encoding", "chunked");
             res.setHeader("Cache-Control", "no-cache")
             res.setHeader("Access-Control-Allow-Origin", "*");
+            res.setHeader("X-Accel-Buffering", "no");
             res.flushHeaders()
             
             DataBuffet.placeOrders(PATRON, ...topics.filter((v)=>!!v))

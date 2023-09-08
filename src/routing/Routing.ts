@@ -28,7 +28,7 @@ export default class Routing {
 
         app.options("*", (req, res)=>{
             res.setHeader("Access-Control-Allow-Origin", "*")
-            res.setHeader("Access-Control-Allow-Headers", "Authorization")
+            res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type")
             res.setHeader("Allow", "GET,POST,PUT,PATCH,DELETE,HEAD,CONNECT,OPTIONS,TRACE")
             res.end()
         })

@@ -35,6 +35,7 @@ class DatabaseInterface {
             password: DATABASE_PASS,
             max: 30,
         });
+        
         console.log("Done");
     }
 

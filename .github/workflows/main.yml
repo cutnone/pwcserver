@@ -1,0 +1,25 @@
+name: "Auto Deploy"
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  deploy: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remote SSH Commands
+        uses: fifsky/ssh-action@v0.0.6
+        with:
+          command: |
+            cd pwcollections/pwcserver
+            pm2 stop pwcserver
+            git stash
+            git stash clear
+            git pull
+            npm i
+            npm run build
+            pm2 restart pwcserver
+          host: cloud8point5.com
+          user: github
+          key: ${{ secrets.SERVER_PRIVATE_KEY }}

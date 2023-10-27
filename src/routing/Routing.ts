@@ -26,10 +26,15 @@ export default class Routing {
         const PRE_SENTINEL = ALL_ROUTES.filter(r => r.position === "PRE_SENTINEL")
         const NORMAL = ALL_ROUTES.filter(r => !r.position || r.position === "NORMAL")
 
+        app.use((req, res, next)=>{
+            console.log(req.method, req.url);
+            next();
+        })
+
         app.options("*", (req, res)=>{
             res.setHeader("Access-Control-Allow-Origin", "*")
-            res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type")
-            res.setHeader("Allow", "GET,POST,PUT,PATCH,DELETE,HEAD,CONNECT,OPTIONS,TRACE")
+            res.setHeader("Access-Control-Allow-Headers", "authorization,content-type")
+            res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,PATCH,DELETE,HEAD,CONNECT,OPTIONS,TRACE")
             res.end()
         })
         app.use(cookieParser())
@@ -37,9 +42,8 @@ export default class Routing {
         app.use(urlencoded({ extended: true }))
 
         app.use((req, res, next)=>{
-            res.setHeader("Access-Control-Allow-Origin", "*");
-            console.log(req.method, req.url);
-            
+            res.setHeader("Access-Control-Allow-Origin", "*")
+            res.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type")
             next();
         })
 

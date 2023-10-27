@@ -24,7 +24,7 @@ import Routing from './routing/Routing.js';
 DOTENV.config();
 
 // Start Server
-const port = 3005
+const port = 3004
 const app: express.Application = express();
 const server = (createServer as Function)(app)
 

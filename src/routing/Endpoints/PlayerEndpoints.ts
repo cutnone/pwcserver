@@ -51,6 +51,7 @@ export default [
             credential: z.string()
         }),
         async handler(req, res) {
+            console.log(req.body.credential);
             
             const RESULT = await Authentication.loginAttempt(req.body.credential)
             switch (RESULT) {

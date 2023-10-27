@@ -13,13 +13,13 @@ jobs:
         with:
           command: |
             cd pwcollections/pwcserver
-            supervisorctl stop pwcserver
+            pm2 stop pwcserver
             git stash
             git stash clear
             git pull
-            /bin/bun i
-            /bin/bun run build
-            supervisorctl start pwcserver
+            npm i
+            npm run build
+            pm2 start pwcserver
           host: cloud8point5.com
           user: github
           key: ${{ secrets.SERVER_PRIVATE_KEY }}

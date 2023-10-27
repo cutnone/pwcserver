@@ -42,8 +42,10 @@ export default class Authentication {
         const TICKET = await this.CLIENT.verifyIdToken({
             idToken: credential,
             audience: CLIENT_ID,
-        }).catch(()=>{
+        }).catch((err)=>{
             verified = false;
+            console.log(err);
+            
         }) as LoginTicket;
         if (!verified) return LoginResult.BAD_CREDENTIALS;
         const PAYLOAD = TICKET.getPayload();
